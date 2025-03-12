@@ -1,0 +1,19 @@
+﻿<h2>Database Test</h2>
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}
+else
+{
+    <table border="1">
+        <tr><th>UserID</th><th>CardNumber</th><th>FullName</th></tr>
+        @foreach (System.Data.DataRow row in Model.Rows)
+        {
+            <tr>
+                <td>@row["UserID"]</td>
+                <td>@row["CardNumber"]</td>
+                <td>@row["FullName"]</td>
+            </tr>
+        }
+    </table>
+}

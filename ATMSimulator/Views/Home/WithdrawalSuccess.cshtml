@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Withdrawal Successful";
+}
+
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Withdrawal Successful!</h2>
+    <p>You have withdrawn: <strong>₱@ViewBag.Amount</strong></p>
+    <p>Card Number: @ViewBag.CardNumber</p>
+
+    <a href="@Url.Action("MainMenu", "Home", new { cardNumber = ViewBag.CardNumber })">
+        <button style="padding: 10px 20px; font-size: 18px; cursor: pointer;">Back to Menu</button>
+    </a>
+</div>

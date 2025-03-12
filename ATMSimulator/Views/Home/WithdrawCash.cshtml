@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Withdraw Cash";
+}
+
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Withdraw Cash</h2>
+    <p>Card Number: @ViewBag.CardNumber</p>
+
+    <form method="post" action="@Url.Action("ProcessWithdrawal", "Home")">
+        <input type="hidden" name="cardNumber" value="@ViewBag.CardNumber" />
+
+        <label>Enter Amount:</label>
+        <input type="number" name="amount" min="100" step="100" required
+               style="padding: 10px; font-size: 16px; width: 250px;" />
+
+        <br><br>
+        <button type="submit" style="padding: 10px 20px; font-size: 18px; cursor: pointer;">
+            Withdraw
+        </button>
+    </form>
+
+</div>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "ATM Main Menu";
+}
+
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Main Menu</h2>
+    <p>Welcome, your card number is @ViewBag.CardNumber</p>
+
+    <ul style="list-style-type: none; padding: 0;">
+        <li><a  href="@Url.Action("WithdrawCash", "Home", new { cardNumber = ViewBag.CardNumber })">Withdraw Cash</a></li>
+        <li>
+            <a asp-action="CheckBalance" asp-controller="Home" asp-route-cardNumber="@ViewBag.CardNumber" >Check Balance</a>
+        </li>
+        <li><a href="@Url.Action("TransferFunds", "Home", new { cardNumber = ViewBag.CardNumber })">Transfer Funds</a></li>
+
+
+        <li><a href="#">Change PIN</a></li>
+        <li><a href="#">Mini Statement</a></li>
+        <li><a href="#">Deposit Cash</a></li>
+    </ul>
+
+</div>

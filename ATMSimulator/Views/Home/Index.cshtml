@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Welcome to ATM Simulator";
+}
+
+<div style="display: flex; justify-content: space-between; align-items: center; height: 100vh; padding: 20px;">
+    <!-- Left Side: Existing Content -->
+    <div style="flex: 1; text-align: left;">
+        <h1>Welcome to ATM Simulator</h1>
+        <p>Please insert your ATM card to get started.</p>
+
+        <a href="@Url.Action("ATMCardVerification", "Home")">
+            <button style="padding: 10px 20px; font-size: 18px; cursor: pointer;">Get Started</button>
+        </a>
+    </div>
+
+    <!-- Right Side: New Content (Image) -->
+    <div style="flex: 1; text-align: center;">
+        <img src="@Url.Content("~/images/atmCard1.png")" alt="ATM Machine" style="max-width: 100%; height: auto;">
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Check Balance";
+}
+
+<h2>Check Balance</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+else if (ViewBag.Balances != null)
+{
+    <p><strong>Card Number:</strong> @ViewBag.CardNumber</p>
+    <table class="table text-light">
+        <thead>
+            <tr>
+                <th>Account Type</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var balance in ViewBag.Balances as Dictionary<string, decimal>)
+            {
+                <tr>
+                    <td>@balance.Key</td>
+                    <td>@balance.Value.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
